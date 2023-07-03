@@ -17,9 +17,11 @@ export default function Profile() {
           }
         };
 
-        const { data: posts } = await axios.get('http://localhost:3000/posts', config)
-        
-        setPosts(posts)
+          /** FETCHING USER POSTS
+           * 1. You need to make a GET /posts, make sure you are sending the auth token along side your request
+           * 2. Once you recive the posts, display them in a list (CSS not important)
+           */
+
       }
       catch(err){
         console.error(err)

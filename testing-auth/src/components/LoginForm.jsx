@@ -7,21 +7,18 @@ export default function Login() {
   const { setToken } = useContext(AppContext)
   const navigate = useNavigate();
   
-  const [email, setEmail] = useState('coolemail@gmail.com');
-  const [password, setPassword] = useState('123123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = async e => {
     e.preventDefault();
-    try{
-      const { data } = await axios.post('http://localhost:3000/session',  { email, password } );
-      setToken(data.token)
-      navigate('/profile')
-    }
-    catch(err){
-      console.error(err)
-      alert('some thing went wrong, check your console logs request/response')
-    }
-    
+
+    /** THINGS TO DO IN THIS FUNCTION
+     * 1. Sent POST request to /session, send email and password as body request
+     * 2. API will return JWT token if email/password exists
+     * 3. Store that token (only the token) using setToken function (it uses react context)
+     * 4. Navigate to /profile (using useNavigate() from react-router-dom) (it's a private route)
+     */
   }
 
   return (

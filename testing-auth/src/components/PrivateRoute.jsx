@@ -6,6 +6,7 @@ import { AppContext } from "../App";
 export default function PrivateRoute({ children }) {
     const { token } = useContext(AppContext);
 
+    /** this lines makes the magic */
     if (!token) {
         return <Navigate to="/" replace />;
     }

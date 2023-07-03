@@ -5,8 +5,8 @@ import { AppContext } from "../App";
 export default function NavBar() {
   const { token , setToken} = useContext(AppContext)
 
+  // what do we need to do to to logout the user?
   const logout  = () => { 
-    setToken(null)
   }
 
   return (
